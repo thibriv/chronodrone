@@ -1,0 +1,60 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}{{ session.prenom }} {{ session.nom }} - Profil{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Espace personnel</h1>
+<h3>Bonjour {{ session.prenom }} {{ session.nom }}</h3>
+{% endblock %}
+
+{% block content %}
+<section>
+    <! affichage des informations sur la personne >
+    <article>
+        <h3>Mes informations</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Prénom</td>
+                    <td>{{ session.prenom }}</td>
+                </tr>
+                <tr>
+                    <td>Nom</td>
+                    <td>{{ session.nom }}</td>
+                </tr>
+                <tr>
+                    <td>Identifiant</td>
+                    <td>{{ session.login }}</td>
+                </tr>
+                <tr>
+                    <td>Service</td>
+                    <td>{{ session.service }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Si ces informations sont érronées, prière de contacter le service informatique.</p>
+    </article>
+    <article>
+        <h3>Si vous souhaitez modifier votre mot de passe</h3>
+        <h6>On n'est jamais trop prudent...</h6>
+        {% if msg %}
+        {% if msg=='erreur' %}
+        <p class="info_err">Votre mot de passe n'a pas pu être changé, merci de réessayer.</p>
+        {% else %}
+        <p class="info">{{ msg }}</p>
+        {% endif %}
+        {% endif %}
+        <div class="row">
+            <div class="col-6 offset-3 form-group" >
+                <form method="post" action="/changePassword">
+                    <input type="password" name="oldmdp" placeholder="Ancien mot de passe"/>
+                    <input type="password" name="newmdp" placeholder="Nouveau mot de passe"/>
+                    <input type="password" name="confmdp" placeholder="Confirmation du mot de passe"/>
+                    <button type="submit">Changer de mot de passe</button>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>
+{% endblock %}

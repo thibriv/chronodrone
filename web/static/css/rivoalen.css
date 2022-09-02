@@ -1,0 +1,119 @@
+@import url("../library/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("menu.css");
+@import url("form.css");
+
+body
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background-color: rgba(249,231,159,0.15);
+    text-align:center;
+}
+
+header h1, header h3
+{
+    font-variant: small-caps;
+}
+
+header h1
+{
+    font-size: 3em;
+    letter-spacing: 0;
+    padding: 0 0 10px 0;
+    color: #ED2700;
+    text-shadow: 0.05em 0.05em 0 rgba(237,39,0,0.1);
+}
+
+section h4
+{
+    padding: 20px 0;
+    color : orange;
+    font-size: 1.5em;
+    font-weight: 800;
+    font-variant : small-caps;
+    text-shadow: 0.07em 0.07em 0 rgba(255,167,0,0.1);
+}
+
+table
+{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+}
+
+td
+{
+    padding : 0 15px;
+    border-top : 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+}
+
+b.date
+{
+    font-weight: 800;
+    font-size : 1.05em;
+    color: #C0C0C0;
+}
+
+b.mission
+{
+    font-size:0.85em;
+    line-height : 1em;
+}
+
+section
+{
+    margin : 10px 30px;
+    border:none;
+}
+
+img
+{
+    align:center;
+    width:100%;
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.2);
+}
+
+nav
+{
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 300;
+    color: #777;
+    line-height: 1.65em;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    padding : 10px 0 0 0;
+}
+
+nav  ul ul
+{
+    background : rgb(254,251,241);
+}
+
+p
+{
+    padding: 0 0 20px 0;
+}
+
+div#div1, div#div2
+{
+    border : 2px solid #C0C0C0;
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.1);
+    margin : 30px 20px;
+}
+
+div#introdroite
+{
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.2);
+}
+
+footer
+{
+    width:100%;
+    color: white;
+    background-color: #666;
+    border-top: 2px solid #C0C0C0;
+    padding:30px 0;
+}

@@ -1,0 +1,91 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Chronodrone{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <img id="title" src="../static/data/img/drone2.jpg" alt="Drone" title="DroneAccueil"/>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <h1>Chronodrone - Accueil</h1>
+        <h3>Bienvenue chez Chronodrone</h3>
+        <h6>Toute l'équipe de Chronodrone vous souhaite un agréable séjour sur notre site internet !</h6>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <p id="description">
+            Chronodrone c'est LE site référence en matière de livraison de colis par les drones.
+            <br />Grâce à tout le potentiel de nos drones, nos maîtres-mots sont rapidité, flexibilité et bien sûr qualité !
+        </p>
+        <! vidéo tutorial />
+        <h6>Voici un petit tutoriel vidéo</h6>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nP-nobvLFm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </article>
+</section>
+<section>
+    <article>
+        <h3 id="Nouscontacter">Nous contacter</h3>
+        <h6>Parce que nous aimons lire vos petits mots !</h6>
+        {% if comment=='erreur' %}
+        <p class="info_err">L'envoi de votre commentaire a échoué. Veuillez réessayer !</p>
+        {% endif %}
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-sm-6">
+                    <form method="post" action="/addComment">
+                        <input type="text" name="nom" placeholder="Nom">
+                        <input type="email" name="email" placeholder="Email">
+                        <textarea name="textarea" placeholder="Message"></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+            </div>
+            <div class="col-xs-12 col-md-6 col-sm-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4015.766117576107!2d1.4788921043056293!3d43.564081172084435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebdcc97f63627%3A0x4973c9f85bbbf5fd!2s%C3%89cole%20Nationale%20de%20l&#39;Aviation%20Civile!5e1!3m2!1sfr!2sfr!4v1618993052667!5m2!1sfr!2sfr" width=80% height=100% style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section>
+    <article>
+        <h3 id="chronodrone"><a href="/" style="text-decoration:none">Chronodrone</a></h3>
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-sm-6 offset-md-1">
+                <h5>Adresse</h5>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-house-user"></i></td>
+                            <td>7 avenue Edouard Belin, 31400 TOULOUSE</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-phone-alt"></i></td>
+                            <td><a href="tel:+33562292929">+33 5 62 29 29 29</a></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-envelope"></i></td>
+                            <td><a href="mailto:contact@chronodrone.fr">contact@chronodrone.fr</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-5 col-sm-6">
+                <h5>Newsletter</h5>
+                {% if news=='erreur' %}
+                <p class="info_err">La souscription à la newsletter a échoué. Veuillez réessayer !</p>
+                {% endif %}
+                <form method="post" action="/addNewsletter">
+                    <input type="email" name="email" placeholder="Email">
+                    <button type="submit">Souscrire</button>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>
+
+{% endblock %}

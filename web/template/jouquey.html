@@ -1,0 +1,144 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Webmaster - Mélanie Jouquey{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/jouquey.css"/>{% endblock %}
+
+{% block header %}
+<div id="flex-container">
+    <div id="flex-container1">
+        <div class="flex-item" id="photo">
+            <img src="../static/data/img/melanie.JPG">
+        </div>
+        <div class="flex-item" id="intro">
+            <h1> Mélanie Jouquey</h1>
+            <h3> Élève étudiante en aéronautique - 1ère année</h3>
+            <p></p>
+            <section id="mail">
+                <i class="fas fa-at"></i>
+                <a href="mailto:melanie.jouquey@alumni.enac.fr">melanie.jouquey@alumni.enac.fr</a>
+            </section>
+            <section id="age">
+                <i class="far fa-calendar-alt"></i>
+                21 ans
+            </section>
+            <section id="telephone">
+                <i class="fas fa-phone"></i>
+                07 86 48 96 65
+            </section>
+        </div>
+        <hr>
+        <div class="flex-item" id="langues">
+            <i class="fas fa-language"></i>
+            <b>Langues</b>
+            <ul type="circle">
+                <li><b>Anglais</b> parlé et écrit (niveau B2)</li>
+                <li><b>Espagnol</b> parlé (niveau A2)</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="flex-item" id="atout">
+            <i class="fas fa-trophy"></i>
+            <b>Atouts</b>
+            <ul type="circle">
+                <li>Perseverante</li>
+                <li>Rigoureuse</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="flex-item" id="Centres d'intérêt">
+            <i class="fas fa-users"></i>
+            <b>Centres d'intérêt</b>
+            <ul type="circle">
+                <li>Escrime: Pendant 6 ans en compétition nationale et européenne</li>
+                <li>Harpe: Au conservatoire pendant 6 ans</li>
+                <li>Autres: Lecture, Histoire, Photographie, Voile, Spatial</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="flex-item" id="Voyages">
+            <i class="fas fa-globe-europe"></i>
+            <b>Voyages</b>
+            <ul type="circle">
+                <li>Etats-Unis</li>
+                <li>Angleterre</li>
+                <li>Espagne</li>
+                <li>Italie</li>
+                <li>Suisse</li>
+            </ul>
+        </div>
+    </div>
+    <div id="flex-container2">
+        <div class="flex-item" id="Diplômes et Formations">
+            <caption><b>Diplômes et Formations</b></caption>
+            <table id="D&F">
+                <tr>
+                    <td>Depuis septembre 2020</td>
+                    <td><b>Formation d'ingénieur</b>,Ecole nationale de l'aviation civile Toulouse</td>
+                </tr>
+                <tr>
+                    <td>De 2017 à 2020</td>
+                    <td><b>Prépa MPSI/PSI</b>,Lycée Buffon Paris, 15ème</td>
+                </tr>
+                <tr>
+                    <td>juin 2017</td>
+                    <td><b>Bac S SVT mention Très Bien </b>,Lycée Camille Claudel Troyes, France</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div class="flex-item" id="exp pro">
+            <table id="exp">
+                <thead><b>Expériences professionelles</b></thead>
+                <tbody>
+                    <tr>
+                        <td>Depuis octobre 2020</td>
+                        <td><b>Membre Opération AirExpo</b>, Enac,Organisation d'évènement visant à promouvoir le meeting aérien (Recolte de fond, communication autour de l'évènement, Rédaction de communiqués de presse)</td>
+                    </tr>
+                    <tr>
+                        <td>Mai 2014</td>
+                        <td><b>Inventoriste</b>,BUROR Troyes, France Réalisation d'inventaire et mise en vente des produits en ligne</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="flex-item" id="Compétences">
+            <b>Compétences</b>
+            <table id="skills">
+                <tr>
+                    <td>Gestion de projet</td>
+                    <td>Réalisation d'un projet d'informatique sur deux mois dans le cadre de ma formation de l'ENAC: Fire In Manhattan</td>
+                </tr>
+                <tr>
+                    <td>Capacité d'adaptation</td>
+                    <td>Dans le cadre d'air expo toute la communication doit être modifié de façon à respecter les mesures sanitaires qui évoluent constamment</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div class="flex-item" id="informatique">
+            <b>Informatique</b>
+            <table id="info">
+                <tr>
+                    <td>Latex</td>
+                </tr>
+                <tr>
+                    <td>Base de données relationnelle (SQL)</td>
+                </tr>
+                <tr>
+                    <td>Programmation en Python</td>
+                </tr>
+                <tr>
+                    <td>Pack Office:    Excel, Word, Power Point</td>
+                </tr>
+                <tr>
+                    <td>Photoshop</td>
+                </tr>
+                <tr>
+                    <td>HTML5,CSS</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

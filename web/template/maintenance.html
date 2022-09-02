@@ -1,0 +1,74 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}Maintenance{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Maintenance</h1>
+{% endblock %}
+
+{% block content %}
+<section>
+    {% if msg=='erreur' %}
+    <p class="info_err">La maintenance n'a pas fonctionné. Veuillez réessayer !</p>
+    {% endif %}
+    <article>
+        <h3>Les drones à maintenir</h3>
+        <! affichage de tous les drones en maintenance >
+        <table data-toggle="table" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th data-field="col1" data-sortable="true">Id Drone</th>
+                    <th data-field="col2" data-sortable="true">Type</th>
+                    <th>Réparation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drone in drones_maintenance %}
+                <tr>
+                    <td>{{ drone['Id_Drone'] }}</td>
+                    <td>{{ drone['Nom_Type'] }}</td>
+                    {% if drone['Etat'] != 'Libre' or drone['Etat'] != 'En maintenance' %}
+                    <td><form method="post" action="/maintenanceDrone"><input value="{{ drone['Id_Drone'] }}" type="hidden" name="Id_Drone"><button type="submit"><i class="fas fa-tools"></i></button></form></td>
+                    {% else %}
+                    <td>Aucune action possible, le drone est occupé.</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Les drones</h3>
+        <! affichage de tous les drones en maintenance >
+        <table data-toggle="table" data-pagination="true" data-page-size="10" data-search="true">
+            <thead>
+                <tr>
+                    <th data-field="col1" data-sortable="true">Id Drone</th>
+                    <th data-field="col2" data-sortable="true">Type</th>
+                    <th data-field="col3" data-sortable="true">Nombre d'heures de vol</th>
+                    <th data-field="col4" data-sortable="true">Nombre de maintenances</th>
+                    <th>Maintenance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drone in drones %}
+                <tr>
+                    <td>{{ drone['Id_Drone'] }}</td>
+                    <td>{{ drone['Nom_Type'] }}</td>
+                    <td>{{ drone['Heure_vol'] }}</td>
+                    <td>{{ drone['nb_maintenance'] }}</td>
+                    {% if drone['Etat'] != 'Libre' and drone['Etat'] != 'En maintenance' %}
+                    <td>Ce drone ne peut être maintenu que lorsqu'il sera disponible le {{ drone['Heure_Dispo'] }}.</td>
+                    {% else %}
+                    <td><form method="post" action="/maintenanceDrone"><input value="{{ drone['Id_Drone'] }}" type="hidden" name="Id_Drone"><button type="submit"><i class="fas fa-tools"></i></button></form></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+{% endblock %}

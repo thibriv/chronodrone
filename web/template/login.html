@@ -1,0 +1,26 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Login{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Se connecter</h1>
+<h3>Pour aller du côté obscur de Chronodrone</h3>
+{% endblock %}
+
+{% block content %}
+<section>
+    {% if info == 'erreur' %}
+    <p class="info_err">L'authentification n'a pas fonctionné, merci de réessayer.</p>
+    {% endif %}
+    <div class="row">
+        <div class="col-2 offset-5 form-group">
+            <form method="post" action="/login_request">
+                <input name="login" placeholder="Identifiant" type="text" />
+                <input name="mdp" placeholder="Mot de passe" type="password" />
+                <button class="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

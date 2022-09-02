@@ -1,0 +1,218 @@
+@import url("../library/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+@import url("menu.css");
+@import url("form.css");
+
+body
+{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.65em;
+    font-size: 16px;
+    background: rgba(1, 141, 221, 0.1);
+
+}
+
+header
+{
+    padding: 100px 0;
+    margin: 0 50px;
+    animation-duration: 1s;
+    animation-name: slidein;
+    text-align: center;
+    background: linear-gradient(white, rgb(231,243,250));
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes slidein {
+  from {
+    margin-left:100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 50px;
+    width: 100%;
+  }
+}
+
+header h1
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#1461d0;
+    font-size: 3em;
+    text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+}
+
+img
+{
+    margin: 0 40px;
+    border-radius: 20px;
+}
+
+header p
+{
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #888;
+}
+
+footer
+{
+    width:100%;
+    color: white;
+    background-color: #666;
+    border-top: 2px solid #C0C0C0;
+    padding:50px 0;
+}
+
+section
+{
+    border-top: 2px solid #C0C0C0;
+    margin: 10px 50px;
+    text-align: center;
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.1);
+
+}
+
+section h2
+{
+    font-weight: 600;
+    color: #888;
+    font-size:1.5em;
+    margin:50px 0;
+}
+
+section h3
+{
+    font-weight: 600;
+    color: #1461d0;
+    font-size:1.8em;
+    margin: 20px 0;
+    font-variant:small-caps;
+    text-transform:capitalize;
+}
+
+article h4
+{
+    color:#0084C6;
+    padding: 0 0 10px 0;
+}
+
+img
+{
+    width:100%;
+}
+
+table
+{
+    width: 100%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    color:#000000;
+}
+
+thead
+{
+    font-weight:700;
+    font-size:1.2em;
+    color:navy;
+    border-top : 3px double black;
+    border-bottom : 3px double black;
+}
+
+th
+{
+    padding: 0 20px;
+}
+
+td
+{
+    padding: 20px 20px;
+    border-bottom : 1px solid black;
+}
+
+article
+{
+    padding: 20px 0;
+}
+
+h3.denied
+{
+    color:red;
+    font-weight:800;
+    font-size:2em;
+}
+
+a.denied
+{
+    color:green;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+h4
+{
+    color:#0084C6;
+    padding: 0 0 10px 0;
+}
+
+header h1
+{
+    font-family: 'Antonio', sans-serif;
+    color:#1461d0;
+}
+
+header h3, header h5
+{
+    font-family: 'Antonio', sans-serif;
+    color:#000000;
+}
+
+section#droite
+{
+    width:100%;
+    font-family: 'Antonio', sans-serif;
+    text-align: justify;
+    color:#000000;
+}
+
+section#gauche
+{
+    font-family: 'Antonio', sans-serif;
+    text-align:justify;
+    background-color: #d8d8d8;
+    color:#000000;
+}
+
+h4
+{
+    font-weight: 1000;
+    color:#1461d0;
+
+}
+
+p
+{
+    text-align:left;
+    width:100%;
+}
+
+li
+{
+    font-weight: 1000;
+}
+
+footer
+{
+    width:100%;
+    color: white;
+    background-color: #666;
+    border-top: 2px solid #C0C0C0;
+    padding:50px 0;
+    text-align: center;
+}

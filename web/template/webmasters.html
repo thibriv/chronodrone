@@ -1,0 +1,52 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Webmasters{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Nos Webmasters</h1>
+<h3>Sélectionnés parmi les meilleurs</h3>
+{% endblock %}
+
+{% block content %}
+<section>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h2><a href="/allietta" style="text-decoration:none">Clémence Allietta</a></h2>
+        <section>
+            <article>
+                <a href="/allietta"><img src="../static/data/img/clem.jpg" alt="Allietta" title="Clémence Allietta"/></a>
+                <p>Bretonne de Paris</p>
+            </article>
+        </section>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h2><a href="/jouquey" style="text-decoration:none">Mélanie Jouquey</a></h2>
+        <section>
+            <article>
+                <a href="/jouquey"><img src="../static/data/img/melanie.JPG" alt="Jouquey" title="Mélanie Jouquey"/></a>
+                <p>Troyenne, experte en champagne</p>
+            </article>
+        </section>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h2><a href="/lemoine" style="text-decoration:none">Anne Lemoine</a></h2>
+        <section>
+            <article>
+                <a href="/lemoine"><img src="../static/data/img/anne.jpg" alt="Lemoine" title="Anne Lemoine"/></a>
+                <p>Bretonne pure sang</p>
+            </article>
+        </section>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <h2><a href="/rivoalen" style="text-decoration:none">Thibault Rivoalen</a></h2>
+        <section>
+            <article>
+                <a href="/rivoalen"><img src="../static/data/img/thibault.jpeg" alt="Rivoalen" title="Thibault Rivoalen"/></a>
+                <p>Tourangeau de coeur, parisien dans l'âme</p>
+            </article>
+        </section>
+    </div>
+</div>
+</section>
+{% endblock %}

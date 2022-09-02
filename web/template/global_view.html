@@ -1,0 +1,93 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}Vue d'ensemble{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Vue d'ensemble de nos services</h1>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <h3>La flotte</h3>
+        <! affichage de tous les drones et états >
+        <table data-toggle="table" data-search="true" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th data-field="col1" data-sortable="true">ID du drone</th>
+                    <th data-field="col2" data-sortable="true">Type de drone</th>
+                    <th>État du drone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drone in drones %}
+                <tr>
+                    <td>{{ drone['Id_Drone'] }}</td>
+                    <td>{{ drone['Nom_Type'] }}</td>
+                    <td>
+                        {{ drone['Etat'] }}
+                        {% if drone['Etat']=="En livraison" %}
+                        <br />Le drone sera disponible le {{ drone['Heure_Dispo'] }}</td>
+                        {% elif drone['Etat']=="Libre"%}
+                </tr>
+                        {% endif %}
+                </td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article>
+        <h3>Les colis</h3>
+        <! affichage de tous les colis et états >
+        <table data-toggle="table" data-search="true" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th colspan=3>Expéditeur</th>
+                    <th data-field="col1" data-sortable="true">Masse (kg)</th>
+                    <th>Destination</th>
+                    <th>État du colis</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in colis %}
+                <tr>
+                    <td>{{ c['Prenom'] }}</td>
+                    <td>{{ c['Nom'] }}</td>
+                    <td>{{ c['Entreprise'] }}</td>
+                    <td>{{ c['Masse_Colis'] }}</td>
+                    <td>{{ c['Adresse_Destination'] }}</td>
+                    <td>{{ c['Etat_Colis'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article>
+    <h3>Les livraisons</h3>
+        <! affichage de toutes les livraisons >
+        <table data-toggle="table" data-search="true" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th colspan=3>Expéditeur</th>
+                    <th>Destination</th>
+                    <th data-field="col1" data-sortable="true">Distance</th>
+                    <th>État de la livraison</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livraison in livraisons %}
+                <tr>
+                    <td>{{ livraison['Prenom'] }}</td>
+                    <td>{{ livraison['Nom'] }}</td>
+                    <td>{{ livraison['Entreprise'] }}</td>
+                    <td>{{ livraison['Adresse_Destination'] }}</td>
+                    <td>{{ livraison['Distance'] }}</td>
+                    <td>{{ livraison['Etat_Livraison'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+{% endblock %}

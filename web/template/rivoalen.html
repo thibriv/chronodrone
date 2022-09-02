@@ -1,0 +1,152 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Webmaster - Thibault Rivoalen{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/rivoalen.css"/>{% endblock %}
+
+{% block header %}
+<p></p>
+<div class="row">
+    <div class="col-md-3 col-sm-12 col-xs-12 offset-md-1">
+        <img src="../static/data/img/thibault.jpeg">
+    </div>
+    <div class="col-md-7 col-sm-12 col-xs-12" id="introdroite">
+        <h1>Thibault Rivoalen</h1>
+        <h3>étudiant ingénieur fonctionnaire à l'enac</h3>
+        <p></p>
+        <table id="intro">
+            <tr>
+                <td><i class="fas fa-birthday-cake"></i></td>
+                <td>21 ans</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-car"></i></td>
+                <td>Permis B avec voiture</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-address-card"></i></td>
+                <td>4 rue de Constantine, 31 500 Toulouse</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-phone"></i></td>
+                <td><a href="tel:+33602349159">06 02 34 91 59</a></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-at"></i></td>
+                <td><a href="mailto:rivoalen.thibault@gmail.com">rivoalen.thibault@gmail.com</a></td>
+            </tr>
+            <tr>
+                <td><i class="fab fa-linkedin"></i></td>
+                <td><a href="https://www.linkedin.com/in/thibault-rivoalen/" target="_blank">linkedin.com/in/thibault-rivoalen/</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<p></p>
+{% endblock %}
+
+{% block content %}
+<div class="row" id="div1">
+    <div class="col-md-7 col-sm-12 col-xs-12">
+        <section>
+            <h4>Formations et Diplômes</h4>
+            <table id="formations">
+                <tbody>
+                    <tr>
+                        <td><b class="date">2020-2023</b><br />Toulouse</td>
+                        <td>Cursus Ingénieur IENAC en qualité d'étudiant fonctionnaire<br />École Nationale de l'Aviation Civile</td>
+                    </tr>
+                    <tr>
+                        <td><b class="date">2018-2020</b><br />Tours</td>
+                        <td>Classes Préparatoires aux Grandes Écoles, PCSI puis PSI*<br />Lycée Descartes</td>
+                    </tr>
+                    <tr>
+                        <td><b class="date">2015-2018</b><br />Tours</td>
+                        <td>Bac S spécialité Sciences de l'Ingénieur, mention TB<br />Lycée Grandmont</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p></p>
+        </section>
+    </div>
+    <div class="col-md-5 col-sm-12 col-xs-12">
+        <section>
+            <h4>Expériences Professionnelles</h4>
+            <table id="experiences">
+                <tr>
+                    <td valign="top"><b class="date">Été 2018<br />(6 semaines)</b></td>
+                    <td valign="top">McDonald's, Saint-Cyr-sur-Loire<br />Poste occupé : équipier polyvalent<br />
+                    <b class="mission">Missions ou tâches réalisées :
+                        <ul>
+                            <li>Encaissement</li>
+                            <li>Prise de commande</li>
+                            <li>Préparation de commande</li>
+                        </ul></b></td>
+                </tr>
+            </table>
+            <p></p>
+        </section>
+    </div>
+</div>
+<div class="row" id="div2">
+    <div class="col-md-5 col-sm-12 col-xs-12">
+        <section>
+            <h4>Centres d'Intêret</h4>
+            <table id="interets">
+                <tr>
+                    <td><i class="fas fa-running"></i></td>
+                    <td>Sport : Ski (3e étoile depuis l'âge de 13 ans avec pratique régulière), natation</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-desktop"></i></td>
+                    <td>Informatique : Amateur de nouvelles technologies et nouveaux logiciels</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-book"></i></td>
+                    <td>Littérature : Amateur de livres de science-fiction, fantastique et policier</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-film"></i></td>
+                    <td>Audiovisuel : Amateur de séries télévisées et de cinéma</td>
+                </tr>
+            </table>
+            <p></p>
+        </section>
+    </div>
+    <div class="col-md-7 col-sm-12 col-xs-12">
+        <section>
+            <h4>Compétences</h4>
+            <table id="competences">
+                <tr>
+                    <td>Sytèmes d'exploitation</td>
+                    <td>Windows (depuis XP), macOS (depuis High Sierra), Linux</td>
+                </tr>
+                <tr>
+                    <td>Bureautique</td>
+                    <td>Office (depuis 2010), Teams, Zoom</td>
+                </tr>
+                <tr>
+                    <td>Langues étrangères</td>
+                    <td>Anglais (B2), Allemand (B1)</td>
+                </tr>
+                <tr>
+                    <td>Langages de programmation</td>
+                    <td>Python, SQL</td>
+                </tr>
+                <tr>
+                    <td>Qualités</td>
+                    <td>Travailler en équipe, conseiller, vendre des produits</td>
+                </tr>
+                <tr>
+                    <td>Humaines</td>
+                    <td>Gérer un projet, développer et appliquer une stratégie, prendre des décisions, gérer le stress</td>
+                </tr>
+                <tr>
+                    <td>Scientifiques</td>
+                    <td>Modéliser des problèmes physiques/mathématiques, les résoudre analytiquement ou numériquement</td>
+                </tr>
+            </table>
+            <p></p>
+        </section>
+    </div>
+</div>
+{% endblock %}

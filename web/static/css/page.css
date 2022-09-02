@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body
+{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.65em;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(1, 141, 221, 0.1);
+}
+
+header
+{
+    padding: 100px 0;
+    margin: 0 50px;
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(white, rgb(231,243,250));
+
+}
+
+
+header h1
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#1461d0;
+    font-size: 3em;
+    text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+}
+
+img#title
+{
+    margin: 0 40px;
+    border-radius: 8px;
+}
+
+img#serviceclient
+{
+    border-radius: 8px;
+
+}
+
+header p
+{
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #888;
+}
+
+footer
+{
+    width:100%;
+    color: white;
+    background-color: #666;
+    border-top: 2px solid #C0C0C0;
+    padding:50px 0;
+}
+
+
+section
+{
+    border-top: 2px solid #C0C0C0;
+    margin:10px 50px;
+    text-align: center;
+    max-width: 100%;
+}
+
+section h2
+{
+    font-weight: 600;
+    color: #888;
+    font-size:1.5em;
+    margin:50px 0;
+}
+
+section h3
+{
+    font-weight: 600;
+    color: #1461d0;
+    font-size:1.8em;
+    margin: 20px 0;
+    font-variant:small-caps;
+    text-transform:capitalize;
+    font-style: italic;
+    text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+}
+
+article
+{
+    margin: 15px 0;
+    box-shadow: 3px 3px 8px 4px rgba(0,0,0,0.1);
+}
+
+article h4
+{
+    color:#0084C6;
+    padding: 0 0 10px 0;
+}
+
+img
+{
+    width:100%;
+}
+
+table
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+section article
+{
+    padding: 10px 20px;
+}
+
+thead
+{
+    font-weight:700;
+    font-size:1.2em;
+    color:navy;
+    border-top : 3px double black;
+    border-bottom : 3px double black;
+}
+
+th
+{
+    padding: 0 20px;
+    border-left:none;
+    border-right:none;
+}
+
+td
+{
+    padding: 20px 20px;
+    border-left:none;
+    border-right:none;
+    border-bottom : 1px solid black;
+}
+
+article
+{
+    padding: 20px 0;
+}
+
+h3.denied
+{
+    color:red;
+    font-weight:800;
+    font-size:2em;
+}
+
+a.denied
+{
+    color:green;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+#contacter
+{
+    text-align: justify;
+    margin: 0 50px;
+}
+
+#chronodrone
+{
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+    padding: 5px 1em;
+    border: 1px solid #777;
+    border-radius: 30px;
+    margin: auto;
+    box-shadow : 1px 1px 2px 1px rgba(0,0,0,0.1);
+
+}
+
+#chronodrone:hover
+{
+    background: white;
+}
+
+p.info_err
+{
+    color: red;
+    background : yellow;
+}

@@ -1,0 +1,76 @@
+@import url("../library/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("menu.css");
+@import url("form.css");
+
+header
+{
+background-color : #154360;
+font-family : 'Fjalla One', sans-serif;
+color : white;
+box-shadow: 10px 5px 5px black
+}
+
+header .col-md-8
+{
+text-align : center;
+margin-top : auto;
+margin-bottom: auto;
+}
+
+header .col-md-4
+{
+text-align: center;
+margin-top: auto;
+margin-bottom: auto;
+}
+
+header ul
+{
+text-align : left;
+list-style: None;
+align: center;
+}
+
+header img
+{
+width: 50%;
+}
+
+#contenu .col-md-4
+{
+background-color: #5FB1E5;
+}
+
+#contenu .col-md-4 h2
+{
+text-align : center
+}
+
+#contenu ul
+{
+list-style: None;
+}
+
+#sectionG h2
+{
+margin-top: 10px;
+color : #154360;
+font-family: 'Fjalla One', sans-serif;
+}
+
+#ligne
+{
+border-top: 0.5px solid #154360;
+}
+
+.col-md-4 h2
+{
+color : black;
+font-family: 'Fjalla One', sans-serif;
+}
+
+#D
+{
+box-shadow: 3px 3px 3px black
+}

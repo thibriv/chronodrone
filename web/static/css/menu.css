@@ -1,0 +1,165 @@
+/********************************************************************************
+menu
+********************************************************************************/
+
+nav
+{
+    left: 0;
+    width: 100%;
+    padding-top: 3px;
+    margin-bottom:2px;
+    border-bottom: 2px solid #C0C0C0;
+}
+
+nav  ul  li
+{
+    display: inline-block;
+    padding: 5px 1em;
+    cursor: pointer;
+    border: 1px solid #777;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.1);
+}
+
+nav ul li:hover
+{
+    background : white;
+    border : 1px solid black;
+}
+
+nav ul  li  a
+{
+    border: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: black;
+}
+
+nav  ul  li a:hover
+{
+    color: #777;
+}
+
+nav  span.fa-stack
+{
+    font-size:1.2em;
+}
+
+nav i.fa-inverse {color: #e4e4e4;}
+nav i.fa-circle { }
+
+nav  ul  li  a:before
+{
+    display: inline-block;
+    background: #878787;
+    color: #e4e4e4;
+    width: 1.65em;
+    height: 1.65em;
+    border-radius: 1.65em;
+    line-height: 1.65em;
+    text-align: center;
+    box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+    margin-right: 0.75em;
+}
+
+nav > ul > li.active > a:before,
+nav > ul > li:hover > a:before
+{
+    background: #ED786A;
+    color: #fff;
+}
+
+nav > ul > li.active > a > span,
+nav > ul > li:hover > a > span
+{
+    color: #ED786A;
+}
+
+/*2e niveau*/
+
+nav  ul > li
+{
+    position: relative;
+}
+
+nav  ul li:hover >ul
+{
+    display:block;
+}
+
+
+nav  ul ul
+{
+    position: absolute;
+    left: 0;
+    top: 2.9em;
+    display: none;
+    text-align: left;
+    z-index: 1000;
+    min-width: 10em;
+    padding: 0;
+    margin:0;
+    border-radius: 10px;
+    background : rgb(231,243,250);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+    margin-top:-10px;
+
+
+}
+
+nav  ul ul li
+{
+    position:relative;
+    line-height: 1.2em;
+    padding: 0.5em 0;
+    width: 100%;
+    border : 1px solid #777;
+    border-radius : 0px;
+}
+
+
+nav  ul ul li  a
+{
+    font-size:1em;
+    text-transform: none!important;
+    padding-left: 1em;
+}
+
+nav span.fa-stack
+{
+    font-size:1em;
+    padding-top:20px;
+}
+
+/*nav .fa-circle*/
+/*{*/
+    /*font-size:1em;*/
+/*}*/
+
+/*ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(1, 141, 221, 0.025);
+
+}
+
+li {
+    float: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+/*li a:hover {
+    background-color: white;
+}*/
+

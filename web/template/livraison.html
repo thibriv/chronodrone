@@ -1,0 +1,82 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}Gestion des livraisons{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Gestion des livraisons</h1>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <h3>Les livraisons à envoyer</h3>
+        {% if add == 'erreur' %}
+        <p class="info_err">L'envoi de la livraison a échoué, merci de réessayer.</p>
+        {% elif del_msg=='erreur' %}
+        <p class="info_err">L'envoi du drone en maintenance a échoué, merci de réessayer.</p>
+        {% endif %}
+        <! affichage de toutes les livraisons prêtes à l'envoi >
+        <table data-toggle="table" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th colspan=3>Expéditeur</th>
+                    <th>Destination</th>
+                    <th data-field="col1" data-sortable="true">Distance</th>
+                    <th>Drone</th>
+                    <th>Envoi</th>
+                    <th>Maintenance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livraison in livraisons %}
+                {% if livraison['Etat_Livraison']=='En attente' %}
+                <tr>
+                    <td>{{ livraison['Prenom'] }}</td>
+                    <td>{{ livraison['Nom'] }}</td>
+                    <td>{{ livraison['Entreprise'] }}</td>
+                    <td>{{ livraison['Adresse_Destination'] }}</td>
+                    <td>{{ livraison['Distance'] }}</td>
+                    <td>{{ livraison['Id_Drone'] }}<br />{{ livraison['Nom_Type'] }}</td>
+                    {% if livraison['Etat']!='En livraison/Reserve' %}
+                    <td><form method="post" action="/validLiv"><input value="{{ livraison['Id_Colis'] }}" type="hidden" name="Id_Colis"><button type="submit"><i class="fas fa-paper-plane"></i></button></form></td>
+                    <td><form method="post" action="/delLiv"><input value="{{ livraison['Id_Colis'] }}" type="hidden" name="Id_Colis"><input value="{{ livraison['Id_Drone'] }}" type="hidden" name="Id_Drone"><button type="submit"><i class="fas fa-times"></i></button></form></td>
+                    {% else %}
+                    <td>Ce colis ne peut pas être envoyé car le drone n'est pas encore disponible.<br />Il le sera à {{ livraison['Heure_Dispo'] }}.</td>
+                    {% endif %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article>
+    <h3>Toutes les livraisons</h3>
+        <! affichage de toutes les livraisons prêtes à l'envoi >
+        <table data-toggle="table" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th colspan=3>Expéditeur</th>
+                    <th>Destination</th>
+                    <th data-field="col1" data-sortable="true">Distance</th>
+                    <th>Drone</th>
+                    <th data-field="col2" data-sortable="true">Etat</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livraison in livraisons %}
+                <tr>
+                    <td>{{ livraison['Prenom'] }}</td>
+                    <td>{{ livraison['Nom'] }}</td>
+                    <td>{{ livraison['Entreprise'] }}</td>
+                    <td>{{ livraison['Adresse_Destination'] }}</td>
+                    <td>{{ livraison['Distance'] }}</td>
+                    <td>{{ livraison['Id_Drone'] }}<br />{{ livraison['Nom_Type'] }}</td>
+                    <td>{{ livraison['Etat_Livraison'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+{% endblock %}

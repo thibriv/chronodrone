@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <meta charset="UTF-8">
+    <title>{% block pagename %}{% endblock %}</title>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <nav>
+
+        <ul id="dropdown">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/webmasters">Nos Webmasters</a>
+                <ul id="dropdown-content">
+                    <li><a href="/lemoine">Anne Lemoine</a></li>
+                    <li><a href="/allietta">Clémence Allietta</a></li>
+                    <li><a href="/jouquey">Mélanie Jouquey</a></li>
+                    <li><a href="/rivoalen">Thibault Rivoalen</a>
+                </ul>
+            </li>
+            <li>
+                {% if session.login %}
+                <a href="/profil">{{ session.prenom }} - Mon compte</a>
+                <ul>
+                    <li><a href="/global_view">Vue d'ensemble</a></li>
+                    {% if session.service == "livraison" %}
+                    <li><a href="/livraisons">Livraisons</a></li>
+                    {% elif session.service == "commande" %}
+                    <li><a href="/reservations">Réservations</a></li>
+                    {% elif session.service =="service client" %}
+                    <li><a href="/serviceclient">Service client</a></li>
+                    {% elif session.service == "maintenance" %}
+                    <li><a href="/maintenance">Maintenance</a></li>
+                    {% else %}
+                    <li><a href="/livraisons">Livraisons</a></li>
+                    <li><a href="/reservations">Réservations</a></li>
+                    <li><a href="/serviceclient">Service client</a></li>
+                    <li><a href="/maintenance">Maintenance</a></li>
+                    <li><a href="/admin">Administration</a></li>
+                    {% endif %}
+                    <li><a href="/logout">Se Déconnecter</a></li>
+                </ul>
+                {% else %}
+                <a href="/login">Se Connecter</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+            {% block header %}{% endblock %}
+    </header>
+
+    {% block content %}{% endblock%}
+
+    <footer>Chronodrone 2021<br />&copy All right reserved IENAC20 groupe B</footer>
+
+    <script type="text/javascript" src="static/js/jquery-3.4.1.min.js" charset="UTF-8"></script>
+    <script defer type="text/javascript" src="static/library/fontawesome-free-5.15.2-web/js/all.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/library/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js" charset="UTF-8"></script>
+</body>
+</html>

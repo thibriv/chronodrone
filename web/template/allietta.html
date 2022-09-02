@@ -1,0 +1,135 @@
+{% extends "layout_logout.html" %}
+{% block pagename %}Webmaster - Clémence ALLIETTA{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/allietta.css"/>{% endblock %}
+
+{% block header %}
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-8'>
+            <h1> Clémence Allietta </h1>
+            <h2> Elève ingénieure de l'Ecole Nationale de l'Aviation Civile </h2>
+        </div>
+        <div class = 'col-md-4'>
+            <div class = 'row'>
+                <img src="../static/data/img/clem.jpg">
+            </div>
+            <div class = 'row'>
+                <h3> Contact </h3>
+                <ul>
+                    <li> clemence.allietta@alumni.enac.fr </li>
+                    <li> 07 81 92 30 00 </li>
+                    <li> 7 Avenue Edouard Belin - 31400 Toulouse </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class = 'container' id = 'contenu'>
+    <div class = 'row'>
+        <div class = 'col-md-8' id ='sectionG'>
+            <div class = 'row'>
+            <h2> Experience professionelle</h2>
+            <table>
+                <tr  id='ligne'>
+                    <td rowspan="2" width = 20px>
+                    2020 - ...
+                    </td>
+                    <td> <h5>Membre de l'équipe gravimétrie - Projet TOLOSAT</h5> </td>
+                </tr>
+                <tr>
+                    <td> Association Spatiale Toulousaine de Recherche Etudiante </td>
+                </tr>
+                <tr id='ligne'>
+                    <td> 2018 - 2020 </td>
+                    <td> <h5>Cours particuliers de mathématiques, physique et chimie</h5> </td>
+                </tr>
+                <tr id='ligne'>
+                    <td rowspan="2" width = 20px>
+                    2016-2019
+                    </td>
+                    <td> <h5>Arbitre Régional d'escrime (Sabre)</h5> </td>
+                </tr>
+                <tr>
+                    <td width = 20px> Arbitrage des championnats régionaux et d'épreuves des championnats de France </td>
+                </tr>
+            </table>
+            </div>
+            <div class = 'row'>
+            <h2> Formation </h2>
+            <table>
+                <tr id = 'ligne'>
+                    <td rowspan="2" width = 20%>
+                    2020-2023
+                    </td>
+                    <td> <h5>Cycle ingénieur de l'Ecole Nationale de l'Aviation Civile</h5> </td>
+                </tr>
+                <tr>
+                    <td> ENAC - Toulouse </td>
+                </tr>
+                <tr id = 'ligne'>
+                    <td rowspan="2" width = 20%>
+                    2018-2020
+                    </td>
+                    <td> <h5>Classe préparatoire au Grandes Ecoles - MPSI/PSI</h5> </td>
+                </tr>
+                <tr>
+                    <td> Lycée Saint-Louis - Paris </td>
+                </tr>
+                </table>
+            </div>
+        </div>
+        <div class = 'col-md-4' id="D">
+            <div class = 'row'>
+                <h2> Compétences </h2>
+                <h3> Informatique </h3>
+                <ul>
+                    <li> Programmation en Python </li>
+                    <li> Gestion de base de donnée - Langage MySQL</li>
+                    <li> HTML/CSS </li>
+                    <li> Edition de circuit imprimés - Logiciel EasyEDA </li>
+                    <li> Scilab </li>
+                </ul>
+                <h3> Langues </h3>
+                <ul>
+                    <li> Anglais - B2 </li>
+                    <li> Espagnol - B1 </li>
+                    <li> Chinois - A1 </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-md-8' id="sectionG">
+            <h2> Certificats et Diplomes </h2>
+            <div class = 'row'>
+                <ul>
+                    <li> Bacalauréats Scientifiques Spécialité Physique/Chimie - Mention Très Bien</li>
+                    <li> Statut "Sportive de Haut Niveau" en sabre (2018-2019) </li>
+                    <li> Certificat "Prevention et Secours Civique - Niveau 1"</li>
+                </ul>
+            </div>
+        </div>
+        <div class = 'col-md-4' id="D">
+            <div class = 'row'>
+            <h2>Centres d'intérêts </h2>
+            <ul>
+                <li> Astronomie </li>
+                <li> Electronique </li>
+                <li> Lecture (Policier) </li>
+                <li> Escrime (Sabre) </li>
+                <li> Course à pied </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "layout_logout.html" %}
+
+{% block pagename %}Chronodrone{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<div class="row">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <img id="title" src="../static/data/img/drone2.jpg" alt="Drone" title="DroneAccueil"/>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <h1>Chronodrone</h1>
+        <h3 class="denied">Accès impossible à la ressource</h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section>
+    <! vidéo tutorial />
+    <h4>
+        Retour à l'accueil <a class="denied" href="/">ici</a>
+    </h4>
+</section>
+
+{% endblock %}

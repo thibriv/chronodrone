@@ -1,0 +1,68 @@
+/********************************************************************************
+formulaires
+********************************************************************************/
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea
+{
+    border:0;
+    width: 100%;
+    background: rgba(1, 141, 221, 0.075);
+    box-shadow: inset 2px 2px 0px 0px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    line-height: 1.25em;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+form textarea
+{
+    min-height: 11em;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+input:-moz-placeholder,
+:-ms-input-placeholder
+{
+    color: #555 !important;
+}
+
+form textarea {min-height: 11em;}
+
+button
+{
+    background: #0087FF;
+    color: #fff;
+    font-variant:small-caps;
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+    font-size: 1.3em;
+    box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+form.table
+{
+    margin: 10px 0;
+}
+
+form.table > button
+{
+   padding: 0.5em 1em;
+   font-size: 1em;
+   color: #fff;
+   box-shadow: none;
+}
+
+button:hover
+{
+    opacity: 0.5;
+}

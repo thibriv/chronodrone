@@ -1,0 +1,79 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}Gestion des réservations{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Gestion des réservations</h1>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <h3>Les colis à livrer</h3>
+        {% if msg_add == 'erreur' %}
+        <p class="info_err">Une erreur s'est produite, veuillez réessayer !</p>
+        {% endif %}
+        <! affichage de tous les colis à livrer >
+        <table data-toggle="table" data-pagination="true" data-page-size="10">
+            <thead>
+                <tr>
+                    <th colspan="3">Expéditeur</th>
+                    <th data-field="col1" data-sortable="true">Masse</th>
+                    <th>Destination</th>
+                    <th colspan="3">Sélection du drone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set i = namespace(value=0) %}
+                {% for c in packageToDeliver %}
+                <tr>
+                    <td>{{ c['Prenom'] }}</td>
+                    <td>{{ c['Nom'] }}</td>
+                    <td>{{ c['Entreprise'] }}</td>
+                    <td>{{ c['Masse_Colis'] }}</td>
+                    <td>{{ c['Adresse_Destination'] }}</td>
+                    {% for drone in drones[i.value] %}
+                    <td>{{ drone["Id_Drone"] }}<br />
+                        {{ drone["Nom_Type"] }}<br />
+                        {{ drone["Etat"] }}
+                        <form method="post" action="/selectDrone"><input value="{{ drone['Id_Drone'] }}" type="hidden" name="Id_Drone"><input value="{{ c['Id_Colis'] }}" type="hidden" name="Id_Colis"><button type="submit">Sélectionner</button></form>
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% set i.value = i.value + 1 %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article>
+        <h3>Supprimer une réservation de drone</h3>
+        {% if msg_del == 'erreur' %}
+        <p class="info_err">Une erreur s'est produite, veuillez réessayer !</p>
+        {% endif %}
+        <! affichage de tous les colis >
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3"> Expéditeur</th>
+                    <th data-field="col1" data-sortable="true">Masse</th>
+                    <th>Destination</th>
+                    <th>Suppresion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in colis %}
+                <tr>
+                    <td>{{ c['Prenom'] }}</td>
+                    <td>{{ c['Nom'] }}</td>
+                    <td>{{ c['Entreprise'] }}</td>
+                    <td>{{ c['Masse_Colis'] }}</td>
+                    <td>{{ c['Adresse_Destination'] }}</td>
+                    <td><form method="post" action="/delResa"><input value="{{ c['Id_Colis'] }}" type="hidden" name="Id_Colis"><input value="{{ c['Id_Drone'] }}" type="hidden" name="Id_Drone"><button type="submit"><i class="fas fa-trash-alt"></i></button></form></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+{% endblock %}

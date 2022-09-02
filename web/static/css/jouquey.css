@@ -1,0 +1,46 @@
+@import url("../library/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("menu.css");
+@import url("form.css");
+
+#flex-container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-content: space-around;
+			height: 1200px;
+			width: 1200px;
+		}
+#flex-container>div {
+			width: 460px;
+			height: 1200px;
+		}
+
+#flex-container2>div {
+			width: 500px;
+			height: 200px;
+		}
+#flex-container2{
+            display: flex;
+            flex-direction: column;
+            align-content: space-around; }
+#flex-container1{ background-color: #769CE7; }
+img
+{
+  align:center;
+  width:460px;
+  height: 300px;
+}
+
+table{
+   width: 150%;
+}
+
+td{
+   padding: 10px;
+}
+
+body
+{
+    background-color: #FDF2E9;
+}

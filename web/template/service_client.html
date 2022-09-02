@@ -1,0 +1,71 @@
+{% extends "layout_session.html" %}
+
+{% block pagename %}Service Client{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="../static/css/all.css"/>{% endblock %}
+
+{% block header %}
+<h1>Service client</h1>
+{% endblock %}
+
+{% block content %}
+<section>
+    <article>
+        <h3>Messages reçus</h3>
+        {% if contact == 'erreur' %}
+        <p class="info_err">L'envoi de la réponse a échoué, merci de réessayer.</p>
+        {% endif %}
+        <table data-toggle="table" data-search="true" data-pagination="true" data-page-size="1">
+            <thead>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Notre réponse</th>
+            </thead>
+            <tbody>
+                {% for msg in messages %}
+                {% if msg['Etat']=='non repondu' %}
+                <tr>
+                    <td>{{ msg['Nom'] }}</td>
+                    <td>{{ msg['Email'] }}</td>
+                    <td>{% set message = msg['Message'].split('\n') %}
+                    {% for elt in message %}
+                        {{ elt }}<br />
+                    {% endfor %}
+                    </td>
+                    <td>
+                        <form method="post" action="/sendRes">
+                            <input type="hidden" name="email" value="{{ msg['Email'] }}">
+                            <input type="hidden" name="Id_Message" value="{{ msg['Id_Message'] }}">
+                            <input type="hidden" name="nom" value="{{ msg['Nom'] }}">
+                            <input type="hidden" name="msg" value="{{ msg['Message'] }}">
+                            <input type="text" name="objet" placeholder="Objet">
+                            <textarea name="textarea" placeholder="Message"></textarea>
+                            <button type="submit">Répondre</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+    <article>
+        <h3>Envoi de la Newsletter</h3>
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-sm-7">
+                {% if contact == 'erreur' %}
+                <p class="info_err">L'envoi de la Newsletter a échoué, merci de réessayer.</p>
+                {% endif %}
+                <form method="post" action="/sendNews">
+                    <input type="text" name="objet" placeholder="Objet">
+                    <textarea name="textarea" placeholder="Message"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            <div class="col-xs-12 col-md-5 col-sm-5">
+                <img id="serviceclient" src="../static/data/img/customer_service.jpg" alt="Serviceclient" title="ServiceClient"/>
+            </div>
+        </div>
+    </article>
+</section>
+{% endblock %}

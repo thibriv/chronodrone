@@ -1,0 +1,258 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.7
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:8889
+-- Généré le : ven. 16 avr. 2021 à 16:52
+-- Version du serveur :  5.7.32
+-- Version de PHP : 7.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données : `IENAC20_Allietta_Jouquey_Lemoine_Rivoalen`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Client`
+--
+
+CREATE TABLE `Client` (
+  `Id_Personne` int(11) NOT NULL,
+  `Entreprise` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Colis`
+--
+
+CREATE TABLE `Colis` (
+  `Id_Colis` int(11) NOT NULL,
+  `Etat_Colis` varchar(20) DEFAULT NULL,
+  `Masse_Colis` double DEFAULT NULL,
+  `Id_Expediteur` int(11) NOT NULL,
+  `Adresse_Destination` varchar(50) DEFAULT NULL,
+  `Id_Destinataire` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Drone`
+--
+
+CREATE TABLE `Drone` (
+  `Id_Drone` int(11) NOT NULL,
+  `Etat` varchar(20) DEFAULT NULL,
+  `Heure_Dispo` time DEFAULT NULL,
+  `Id_Type` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Employe`
+--
+
+CREATE TABLE `Employe` (
+  `Id_Personne` int(11) NOT NULL,
+  `mdp` varchar(20) DEFAULT NULL,
+  `login` varchar(20) DEFAULT NULL,
+  `service` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Employe`
+--
+
+INSERT INTO `Employe` (`Id_Personne`, `mdp`, `login`, `service`) VALUES
+(10000, 'jk', 'ddzhfi', 'A remplir');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Livraison`
+--
+
+CREATE TABLE `Livraison` (
+  `Id_Colis` int(11) NOT NULL,
+  `Id_Drone` int(11) NOT NULL,
+  `Etat_Livraison` varchar(50) DEFAULT NULL,
+  `Distance` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Personne`
+--
+
+CREATE TABLE `Personne` (
+  `Id_Personne` int(11) NOT NULL,
+  `Nom` varchar(20) DEFAULT NULL,
+  `Prenom` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `Personne`
+--
+
+INSERT INTO `Personne` (`Id_Personne`, `Nom`, `Prenom`) VALUES
+(10000, 'JOUQUEY', 'Mélanie');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Reservation`
+--
+
+CREATE TABLE `Reservation` (
+  `Id_Colis` int(11) NOT NULL,
+  `Id_Drone` int(11) NOT NULL,
+  `Id_Personne` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Type`
+--
+
+CREATE TABLE `Type` (
+  `Id_Type` int(11) NOT NULL,
+  `Nom_Type` varchar(20) DEFAULT NULL,
+  `Masse_Max` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `Client`
+--
+ALTER TABLE `Client`
+  ADD PRIMARY KEY (`Id_Personne`);
+
+--
+-- Index pour la table `Colis`
+--
+ALTER TABLE `Colis`
+  ADD PRIMARY KEY (`Id_Colis`),
+  ADD KEY `Id_Expediteur` (`Id_Expediteur`),
+  ADD KEY `Id_Destinataire` (`Id_Destinataire`);
+
+--
+-- Index pour la table `Drone`
+--
+ALTER TABLE `Drone`
+  ADD PRIMARY KEY (`Id_Drone`),
+  ADD KEY `Id_Type` (`Id_Type`);
+
+--
+-- Index pour la table `Employe`
+--
+ALTER TABLE `Employe`
+  ADD PRIMARY KEY (`Id_Personne`);
+
+--
+-- Index pour la table `Livraison`
+--
+ALTER TABLE `Livraison`
+  ADD PRIMARY KEY (`Id_Colis`,`Id_Drone`);
+
+--
+-- Index pour la table `Personne`
+--
+ALTER TABLE `Personne`
+  ADD PRIMARY KEY (`Id_Personne`);
+
+--
+-- Index pour la table `Reservation`
+--
+ALTER TABLE `Reservation`
+  ADD PRIMARY KEY (`Id_Drone`,`Id_Colis`),
+  ADD KEY `Id_Colis` (`Id_Colis`),
+  ADD KEY `Id_Personne` (`Id_Personne`);
+
+--
+-- Index pour la table `Type`
+--
+ALTER TABLE `Type`
+  ADD PRIMARY KEY (`Id_Type`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `Colis`
+--
+ALTER TABLE `Colis`
+  MODIFY `Id_Colis` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `Drone`
+--
+ALTER TABLE `Drone`
+  MODIFY `Id_Drone` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `Personne`
+--
+ALTER TABLE `Personne`
+  MODIFY `Id_Personne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+
+--
+-- AUTO_INCREMENT pour la table `Type`
+--
+ALTER TABLE `Type`
+  MODIFY `Id_Type` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `Client`
+--
+ALTER TABLE `Client`
+  ADD CONSTRAINT `client_ibfk_1` FOREIGN KEY (`Id_Personne`) REFERENCES `Personne` (`Id_Personne`);
+
+--
+-- Contraintes pour la table `Colis`
+--
+ALTER TABLE `Colis`
+  ADD CONSTRAINT `colis_ibfk_1` FOREIGN KEY (`Id_Expediteur`) REFERENCES `Personne` (`Id_Personne`),
+  ADD CONSTRAINT `colis_ibfk_2` FOREIGN KEY (`Id_Destinataire`) REFERENCES `Personne` (`Id_Personne`);
+
+--
+-- Contraintes pour la table `Drone`
+--
+ALTER TABLE `Drone`
+  ADD CONSTRAINT `drone_ibfk_1` FOREIGN KEY (`Id_Type`) REFERENCES `Type` (`Id_Type`);
+
+--
+-- Contraintes pour la table `Employe`
+--
+ALTER TABLE `Employe`
+  ADD CONSTRAINT `employe_ibfk_1` FOREIGN KEY (`Id_Personne`) REFERENCES `Personne` (`Id_Personne`);
+
+--
+-- Contraintes pour la table `Livraison`
+--
+ALTER TABLE `Livraison`
+  ADD CONSTRAINT `livraison_ibfk_1` FOREIGN KEY (`Id_Colis`,`Id_Drone`) REFERENCES `Reservation` (`Id_Colis`, `Id_Drone`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `Reservation`
+--
+ALTER TABLE `Reservation`
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Id_Drone`) REFERENCES `Drone` (`Id_Drone`),
+  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`Id_Colis`) REFERENCES `Colis` (`Id_Colis`),
+  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`Id_Personne`) REFERENCES `Personne` (`Id_Personne`);
